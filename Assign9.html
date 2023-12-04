@@ -1,0 +1,27 @@
+<html>
+<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<body>
+<div ng-app = "MyApp" ng-controller="MyController">
+<form>
+<p>Enter your Name: <input type = "text" ng-model = "name" required></p>
+<p>Enter your password: <input type = "password" ng-model = "password" required></p>
+<input type = "button" value = "Submit" ng-click="display()">
+<input type = "button" value = "Reset" ng-click="reset()"></p>
+</form>
+
+</div>
+<script>
+var app = angular.module('MyApp', []);
+app.controller('MyController', function($scope) {
+$scope.name = "";
+$scope.display=function() {
+	alert($scope.name+" has submitted the form");
+};
+$scope.reset=function() {
+	$scope.name="";
+	$scope.password="";
+};
+});
+</script>
+</body>
+</html>
